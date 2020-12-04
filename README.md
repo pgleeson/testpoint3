@@ -1,2 +1,2 @@
-# testpoint3
-Testing this on GitHub
+# testpoint3 project
+Testing this on GitHub...
