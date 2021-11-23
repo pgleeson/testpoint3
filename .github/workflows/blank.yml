@@ -41,7 +41,8 @@ jobs:
         env: 
           HH: Hodgk
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-          echo this $HH
+          echo "Add other actions to build,"
+          echo "test, and deploy your project."
+          echo "this $HH"
+          echo "------------------"
           env
