@@ -39,7 +39,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         env: 
-          HH: Hodgk 
+          HH: "Hodgk ${GITHUB_REF_NAME}"
         run: |
           echo "Add other actions to build,"
           echo "test, and deploy your project."
