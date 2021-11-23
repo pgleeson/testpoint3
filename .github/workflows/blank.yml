@@ -18,7 +18,6 @@ jobs:
   # This workflow contains a single job called "build"
   build:
 
-
     runs-on: ${{ matrix.runs-on }}
     strategy:
       fail-fast: false
@@ -42,3 +41,5 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          set hh='rry'
+          env
