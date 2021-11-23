@@ -44,6 +44,6 @@ jobs:
           echo "Add other actions to build,"
           echo "test, and deploy your project."
           echo "this > ${{ env.HH }} < is it"
-          echo "this > ${{ GITHUB_REF_NAME }} < is it too"
+          echo "this > ${GITHUB_REF_NAME} < is it too"
           echo "------------------"
           env
