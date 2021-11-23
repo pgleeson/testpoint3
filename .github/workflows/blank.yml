@@ -22,7 +22,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:        
-        java: [ '8', '17' ]
+        java: [ '17' ]
         runs-on: [ubuntu-latest, macos-11, windows-latest]
 
     name: Test on Java ${{ matrix.Java }} on ${{ matrix.runs-on }}
@@ -44,6 +44,6 @@ jobs:
           echo "Add other actions to build,"
           echo "test, and deploy your project."
           echo "this > ${{ env.HH }} < is it"
-          echo "this > ${GITHUB_REF_NAME} < is it too"
+          echo "this > ${{ env.GITHUB_REF_NAME }} < is it too"
           echo "------------------"
           env
