@@ -49,3 +49,13 @@ jobs:
           echo "this > %GITHUB_REF_NAME% < is it too?"
           echo "------------------"
           env
+          
+      - name: Run win only
+        if: ${{ matrix.runs-on == 'windows-latest' }}
+        run: |
+          set gh=%GITHUB_REF_NAME%
+          
+          echo "this > %GITHUB_REF_NAME% < is it too?"
+          
+          echo "this > %gh% < is it too?"
+          
