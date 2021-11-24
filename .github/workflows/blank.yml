@@ -46,5 +46,6 @@ jobs:
           echo "this > ${{ env.HH }} < is it"
           echo "this > ${{ env.GITHUB_REF_NAME }} < is it too"
           echo "this > ${GITHUB_REF_NAME} < is it too?"
+          echo "this > %GITHUB_REF_NAME% < is it too?"
           echo "------------------"
           env
