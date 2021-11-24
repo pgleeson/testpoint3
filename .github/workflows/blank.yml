@@ -63,5 +63,5 @@ jobs:
           pwd
           dir
           
-          jnml.bat
+          .\jnml.bat
           
