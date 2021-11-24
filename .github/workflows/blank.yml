@@ -60,4 +60,8 @@ jobs:
           echo "this > %gh% < is it too?"
           
           echo "env: > $env:GITHUB_REF_NAME"
+          pwd
+          dir
+          
+          jnml.bat
           
