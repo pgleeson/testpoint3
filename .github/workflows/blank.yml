@@ -65,7 +65,8 @@ jobs:
           
           $env:main_repo_branch=$env:GITHUB_REF_NAME
           set env:mm=$env:GITHUB_REF_NAME
-          if ( $env:main_repo_branch -ne "master" ) { $env:main_repo_branch="development" }
+          # if [[ ${main_repo_branch} != "master" && ${main_repo_branch} != "development" && ${main_repo_branch} != "experimental" && ${main_repo_branch} != *"osb"* ]]; then main_repo_branch=development ; fi
+          if ( $env:main_repo_branch -ne "master" -and $env:main_repo_branch -ne "development" -and $env:main_repo_branch -ne "experimental" -and $env:main_repo_branch  -notlike '*osb*' ) { $env:main_repo_branch="development" }
           echo "Using branch $env:main_repo_branch..."
           echo "Using branch 2 $env:mm..."
           
