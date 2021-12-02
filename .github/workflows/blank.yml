@@ -61,7 +61,7 @@ jobs:
           echo "this > %gh% < is it too?"
           echo "env: > $env:GITHUB_REF_NAME"
           
-          set main_repo_branch=$env:GITHUB_REF_NAME
+          $env:main_repo_branch=$env:GITHUB_REF_NAME
           set env:mm=$env:GITHUB_REF_NAME
           # if [[ ${main_repo_branch} != "master" && ${main_repo_branch} != "development" && ${main_repo_branch} != "experimental" && ${main_repo_branch} != *"osb"* ]]; then main_repo_branch=development ; fi
           echo "Using branch $env:main_repo_branch..."
