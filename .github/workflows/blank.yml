@@ -57,14 +57,11 @@ jobs:
         if: ${{ matrix.runs-on == 'windows-latest' }}
         run: |
           set gh=%GITHUB_REF_NAME%
-          
           echo "this > %GITHUB_REF_NAME% < is it too?"
-          
           echo "this > %gh% < is it too?"
-          
           echo "env: > $env:GITHUB_REF_NAME"
-          pwd
-          dir
           
-          .\jnml.bat
+      - name: Run everywhere
+        run: |
+          echo "back again?"
           
