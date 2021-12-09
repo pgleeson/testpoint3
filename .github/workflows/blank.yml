@@ -55,6 +55,9 @@ jobs:
           echo "------------------"
           env
           
+          if [[  ${{ matrix.Java }} == *"17"* ]]; then argz=-nogui ; fi
+          echo "this > $argz < .. "
+          
       - name: Run win only
         if: ${{ matrix.runs-on == 'windows-latest' }}
         run: |
