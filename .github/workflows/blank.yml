@@ -54,7 +54,10 @@ jobs:
           echo "this > $env:HH < is it 4?"
           echo "------------------"
           env
-          
+         
+      - name: Run non win only
+        if: ${{ matrix.runs-on != 'windows-latest' }}
+        run: | 
           if [[  ${{ matrix.Java }} == *"17"* ]]; then argz=-nogui ; fi
           echo "this > $argz < .. "
           
