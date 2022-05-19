@@ -76,7 +76,8 @@ jobs:
           echo "Using branch $env:main_repo_branch..."
           echo "Using branch 2 $env:mm..."
           
-          bnn ff
+          ls
+          tree
           
       - name: Run everywhere
         run: |
