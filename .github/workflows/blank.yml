@@ -79,8 +79,9 @@ jobs:
           ls
           tree
           
-      - name: Run everywhere
+      - name: Test svn
         run: |
           echo "back again?"
+          svn co https://svn.code.sf.net/p/neuroml/code/jNeuroMLJar 
           env
           
