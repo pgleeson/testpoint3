@@ -83,5 +83,6 @@ jobs:
         run: |
           echo "back again?"
           svn co https://svn.code.sf.net/p/neuroml/code/jNeuroMLJar 
+          pwd
           env
           
