@@ -82,6 +82,7 @@ jobs:
       - name: Test svn
         run: |
           echo "back again?"
+          svn --version
           svn co https://svn.code.sf.net/p/neuroml/code/jNeuroMLJar 
           pwd
           env
