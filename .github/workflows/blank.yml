@@ -85,4 +85,5 @@ jobs:
           svn co https://svn.code.sf.net/p/neuroml/code/jNeuroMLJar 
           pwd
           env
+        shell: bash
           
