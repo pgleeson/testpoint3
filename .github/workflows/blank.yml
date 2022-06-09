@@ -83,7 +83,8 @@ jobs:
         run: |
           echo "back again?"
           svn --version
-          svn co https://svn.code.sf.net/p/neuroml/code/jNeuroMLJar 
+          # svn co https://svn.code.sf.net/p/neuroml/code/jNeuroMLJar 
+          svn checkout svn://svn.code.sf.net/p/neuroml/code/trunk neuroml-code
           pwd
           env
         shell: bash
