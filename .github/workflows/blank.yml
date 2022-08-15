@@ -37,6 +37,7 @@ jobs:
         run: echo Hello, world!
 
       - name: Run a script
+        if: ${{ matrix.runs-on == 'windows-latest' }}
         run: |
             ./jnml.bat
 
