@@ -48,7 +48,8 @@ jobs:
             echo "-----------------------------------"
             sudo apt install ubuntu-drivers-common
             echo "-----------------------------------"
-            ubuntu-drivers devices
+            #ubuntu-drivers devices
+            sudo apt install nvidia-driver-460 nvidia-cuda-toolkit
 
       - name: Run a script
         if: ${{ matrix.runs-on == 'windows-latest' }}
