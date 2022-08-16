@@ -40,7 +40,9 @@ jobs:
       - name: OpenCl
         if: ${{ matrix.runs-on == 'ubuntu-latest' }}
         run: |
-            apt install clinfo
+            sudo apt install lshw clinfo
+            lshw
+            echo "-----------------------------------"
             clinfo
 
       - name: Run a script
