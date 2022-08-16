@@ -23,7 +23,7 @@ jobs:
       fail-fast: false
       matrix:        
         java: [ '17' ]
-        runs-on: [ubuntu-latest, macos-11, windows-latest]
+        runs-on: [ubuntu-latest]
 
     name: Test on Java ${{ matrix.Java }} on ${{ matrix.runs-on }}
 
@@ -41,9 +41,14 @@ jobs:
         if: ${{ matrix.runs-on == 'ubuntu-latest' }}
         run: |
             sudo apt install lshw clinfo
+            echo "-----------------------------------"
             lshw
             echo "-----------------------------------"
             clinfo
+            echo "-----------------------------------"
+            sudo apt install ubuntu-drivers-common
+            echo "-----------------------------------"
+            ubuntu-drivers devices
 
       - name: Run a script
         if: ${{ matrix.runs-on == 'windows-latest' }}
