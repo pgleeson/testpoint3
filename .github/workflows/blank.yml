@@ -6,9 +6,9 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [ main, development ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, development ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -35,6 +35,13 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a single command
         run: echo Hello, world!
+
+      # OpenCL info
+      - name: OpenCl
+        if: ${{ matrix.runs-on == 'ubuntu-latest' }}
+        run: |
+            apt install clinfo
+            clinfo
 
       - name: Run a script
         if: ${{ matrix.runs-on == 'windows-latest' }}
