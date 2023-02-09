@@ -52,7 +52,7 @@ jobs:
         if: ${{ matrix.runs-on != 'windows-latest' }}
         run: |
           if [[  ${{ matrix.runs-on }} == *"macos"* ]]; then brew install graphviz ; fi
-          if [[  ${{ matrix.runs-on }} == *"ubuntu"* ]]; then apt install graphviz ; fi
+          if [[  ${{ matrix.runs-on }} == *"ubuntu"* ]]; then sudo apt install graphviz ; fi
           dot -V
 
       # Runs a set of commands using the runners shell
