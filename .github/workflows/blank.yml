@@ -49,8 +49,8 @@ jobs:
            
 
       - name: Test graphviz
-        if: ${{ matrix.runs-on != 'windows-latest' }}
         run: |
+          if [[  ${{ matrix.runs-on }} == *"windows"* ]]; then choco install graphviz ; fi
           if [[  ${{ matrix.runs-on }} == *"macos"* ]]; then brew install graphviz ; fi
           if [[  ${{ matrix.runs-on }} == *"ubuntu"* ]]; then sudo apt install graphviz ; fi
           dot -V
