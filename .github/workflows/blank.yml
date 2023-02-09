@@ -48,11 +48,17 @@ jobs:
            du -h
            
 
-      - name: Test graphviz
+      - name: Test graphviz mac/linux
+        if: ${{ matrix.runs-on != 'windows-latest' }}
         run: |
-          if [[  ${{ matrix.runs-on }} == *"windows"* ]]; then choco install graphviz ; fi
           if [[  ${{ matrix.runs-on }} == *"macos"* ]]; then brew install graphviz ; fi
           if [[  ${{ matrix.runs-on }} == *"ubuntu"* ]]; then sudo apt install graphviz ; fi
+          dot -V
+
+      - name: Test graphviz wn
+        if: ${{ matrix.runs-on == 'windows-latest' }}
+        run: |
+          choco install graphviz
           dot -V
 
       # Runs a set of commands using the runners shell
