@@ -48,7 +48,7 @@ jobs:
            du -h
            
       - name: Run only on mac
-        if: ${{ contains( 'mac', matrix.runs-on ) }}
+        if: ${{ contains(matrix.runs-on, 'mac') }}
         run: |
           echo "Hello from Mac..."
 
