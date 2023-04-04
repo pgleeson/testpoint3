@@ -47,6 +47,10 @@ jobs:
            df -h
            du -h
            
+      - name: Run only on mac
+        if: ${{ contains( 'mac', matrix.runs-on ) }}
+        run: |
+          echo "Hello from Mac..."
 
       - name: Test graphviz mac/linux
         if: ${{ matrix.runs-on != 'windows-latest' }}
