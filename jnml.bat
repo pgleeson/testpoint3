@@ -1,1 +1,1 @@
-echo "Helo from java"
+echo "Helo from the java"
