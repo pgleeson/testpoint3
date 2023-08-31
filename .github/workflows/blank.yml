@@ -82,13 +82,16 @@ jobs:
         env:
           NSGR_USERNAME: "aaa"
         run: |
+          echo Writing to dir %HOMEPATH%
+          echo Writing to file %HOMEPATH%/nsgrest.conf
+          echo Writing var - $env:NSGR_USERNAME
           
-          echo "APPNAME=PY_EXPANSE" > %HOME%/nsgrest.conf
-          echo "URL=https://nsgr.sdsc.edu:8443/cipresrest/v1" >> %HOME%/nsgrest.conf
-          more %HOME%/nsgrest.conf # print contents so far...
-          echo "USERNAME=$env:NSGR_USERNAME" >> ${HOME}/nsgrest.conf
+          echo "APPNAME=PY_EXPANSE" > %HOMEPATH%/nsgrest.conf
+          echo "URL=https://nsgr.sdsc.edu:8443/cipresrest/v1" >> %HOMEPATH%/nsgrest.conf
+          more %HOMEPATH%/nsgrest.conf # print contents so far...
+          echo "USERNAME=$env:NSGR_USERNAME" >> ${HOMEPATH}/nsgrest.conf
           
-          more %HOME%/nsgrest.conf # print contents so far...
+          more %HOMEPATH%/nsgrest.conf # print contents so far...
 
 
           
