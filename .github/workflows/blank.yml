@@ -82,13 +82,13 @@ jobs:
         env:
           NSGR_USERNAME: "aaa"
         run: |
-          echo "Writing to dir $env:HOMEPATH"
-          echo "Writing to file $env:HOMEPATH\nsgrest.conf"
+          echo "Writing to dir $env:GITHUB_WORKSPACE"
+          echo "Writing to file $env:GITHUB_WORKSPACE\nsgrest.conf"
           echo "Writing var - $env:NSGR_USERNAME"
           
-          echo "APPNAME=PY_EXPANSE" > tee $env:HOMEPATH\nsgrest.conf
-          echo "URL=https://nsgr.sdsc.edu:8443/cipresrest/v1" >> tee $env:HOMEPATH\nsgrest.conf
-          more "$env:HOMEPATH\nsgrest.conf" # print contents so far...
+          echo "APPNAME=PY_EXPANSE" > tee $env:GITHUB_WORKSPACE\nsgrest.conf
+          echo "URL=https://nsgr.sdsc.edu:8443/cipresrest/v1" >> tee $env:GITHUB_WORKSPACE\nsgrest.conf
+          more "$env:GITHUB_WORKSPACE\nsgrest.conf" # print contents so far...
         
 
 
