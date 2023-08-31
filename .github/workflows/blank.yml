@@ -69,14 +69,12 @@ jobs:
         env:
           NSGR_USERNAME: "aaa"
         run: |
-          echo "APPNAME=PY_EXPANSE" > ~/nsgrest.conf
-          echo "URL=https://nsgr.sdsc.edu:8443/cipresrest/v1" >> ~/nsgrest.conf
-
-          more ~/nsgrest.conf # print contents so far...
-
-          echo "USERNAME=${NSGR_USERNAME}" >> ~/nsgrest.conf
           
-          more ~/nsgrest.conf # print contents so far...
+          echo "APPNAME=PY_EXPANSE" > ${{ HOME }}/nsgrest.conf
+          echo "URL=https://nsgr.sdsc.edu:8443/cipresrest/v1" >> ${{ HOME }}/nsgrest.conf
+          echo "USERNAME=${NSGR_USERNAME}" >> ${{ HOME }}/nsgrest.conf
+          
+          more ${{ HOME }}/nsgrest.conf # print contents so far...
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
