@@ -47,8 +47,8 @@ jobs:
            df -h
            du -h
 
-      - name: Run depending on repo name
-        if: env.GITHUB_REPOSITORY == 'pgleeson/testpoint3'
+      - name: Run depending on owner
+        if: github.owner == pgleeson
         run: |
            echo I'm running...
            
@@ -91,9 +91,9 @@ jobs:
           echo "Writing to file $env:GITHUB_WORKSPACE\nsgrest.conf"
           echo "Writing var - $env:NSGR_USERNAME"
           
-          echo "APPNAME=PY_EXPANSE" > tee $env:GITHUB_WORKSPACE\nsgrest.conf
-          echo "URL=https://nsgr.sdsc.edu:8443/cipresrest/v1" >> tee $env:GITHUB_WORKSPACE\nsgrest.conf
-          more "$env:GITHUB_WORKSPACE\nsgrest.conf" # print contents so far...
+          # echo "APPNAME=PY_EXPANSE" > tee $env:GITHUB_WORKSPACE\nsgrest.conf
+          # echo "URL=https://nsgr.sdsc.edu:8443/cipresrest/v1" >> tee $env:GITHUB_WORKSPACE\nsgrest.conf
+          # more "$env:GITHUB_WORKSPACE\nsgrest.conf" # print contents so far...
         
 
 
