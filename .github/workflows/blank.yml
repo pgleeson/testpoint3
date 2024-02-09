@@ -46,6 +46,11 @@ jobs:
            env
            df -h
            du -h
+
+      - name: Run depending on repo name
+        if: env.GITHUB_REPOSITORY = 'pgleeson/testpoint3'
+        run: |
+           echo I'm running...
            
       - name: Run only on mac
         if: ${{ contains(matrix.runs-on, 'mac') }}
