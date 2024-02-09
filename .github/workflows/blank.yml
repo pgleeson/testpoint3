@@ -48,7 +48,7 @@ jobs:
            du -h
 
       - name: Run depending on repo name
-        if: env.GITHUB_REPOSITORY = 'pgleeson/testpoint3'
+        if: env.GITHUB_REPOSITORY == 'pgleeson/testpoint3'
         run: |
            echo I'm running...
            
