@@ -48,7 +48,7 @@ jobs:
            du -h
 
       - name: Run depending on owner
-        if: github.owner == 'pgleeson'
+        if: github.repository_owner == 'pgleeson'
         run: |
            echo I'm running...
            
