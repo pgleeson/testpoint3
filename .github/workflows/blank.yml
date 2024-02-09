@@ -50,7 +50,7 @@ jobs:
       - name: Run depending on owner
         if: github.repository_owner == 'pgleeson'
         run: |
-           echo I'm running...
+           echo "I'm running..."
            
       - name: Run only on mac
         if: ${{ contains(matrix.runs-on, 'mac') }}
