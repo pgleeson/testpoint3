@@ -157,6 +157,7 @@ jobs:
           tree
           
       - name: Test svn
+        if: ${{ matrix.runs-on != 'macos-14' }}
         run: |
           echo "back again?"
           svn --version
