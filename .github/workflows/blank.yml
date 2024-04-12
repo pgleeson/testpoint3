@@ -23,7 +23,7 @@ jobs:
       fail-fast: false
       matrix:        
         java: [ '17' ]
-        runs-on: [ubuntu-latest, macos-latest, windows-latest]
+        runs-on: [ubuntu-latest, macos-latest, windows-latest, macos-14 ]
 
     name: Test on Java ${{ matrix.Java }} on ${{ matrix.runs-on }}
 
@@ -63,6 +63,13 @@ jobs:
           if [[  ${{ matrix.runs-on }} == *"macos"* ]]; then brew install graphviz ; fi
           if [[  ${{ matrix.runs-on }} == *"ubuntu"* ]]; then sudo apt install graphviz ; fi
           dot -V
+
+      
+      - name: Install HDF5/pytables
+          if [[  ${{ java }} == "17" ]];
+          if [[  ${{ matrix.runs-on }} == *"macos"* ]]; then brew install hdf5 ; fi
+          if [[  ${{ matrix.runs-on }} == *"ubuntu"* ]]; then sudo apt install hdf5 ; fi
+          fi
 
       - name: Test graphviz wn
         if: ${{ matrix.runs-on == 'windows-latest' }}
