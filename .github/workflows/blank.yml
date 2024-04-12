@@ -75,7 +75,7 @@ jobs:
       - name: Install HDF5/pytables
         if: ${{ matrix.runs-on != 'windows-latest' }}
         run: |
-          if [[  ${{ python-version }} == "3.11" ]] || [[  ${{ python-version }} == "3.12" ]]; then 
+          if [[  ${{ matrix.python-version }} == "3.11" ]] || [[  ${{ matrix.python-version }} == "3.12" ]]; then 
           if [[  ${{ matrix.runs-on }} == *"macos"* ]]; then brew install hdf5 ; fi ;
           if [[  ${{ matrix.runs-on }} == *"ubuntu"* ]]; then sudo apt install python3-tables ; fi ;
           fi;
