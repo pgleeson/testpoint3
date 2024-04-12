@@ -68,9 +68,9 @@ jobs:
       - name: Install HDF5/pytables
         run: |
           if [[  ${{ matrix.java }} == "17" ]];
-          if [[  ${{ matrix.runs-on }} == *"macos"* ]]; then brew install hdf5 ; fi
-          if [[  ${{ matrix.runs-on }} == *"ubuntu"* ]]; then sudo apt install hdf5 ; fi
-          fi
+          if [[  ${{ matrix.runs-on }} == *"macos"* ]]; then brew install hdf5 ; fi ;
+          if [[  ${{ matrix.runs-on }} == *"ubuntu"* ]]; then sudo apt install hdf5 ; fi ;
+          fi;
 
       - name: Test graphviz wn
         if: ${{ matrix.runs-on == 'windows-latest' }}
