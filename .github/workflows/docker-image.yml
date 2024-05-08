@@ -21,7 +21,6 @@ jobs:
 
     - name: Build the Docker image
       run: |
-        chmod a+w output/
         ls -alt
         docker build -t test_docker -f DockerfileU24 .
 
