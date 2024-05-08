@@ -63,6 +63,7 @@ jobs:
         if: ${{ contains(matrix.runs-on, 'mac') }}
         run: |
           echo "Hello from Mac..."
+          brew install subversion
 
       - name: Test graphviz mac/linux
         if: ${{ matrix.runs-on != 'windows-latest' }}
