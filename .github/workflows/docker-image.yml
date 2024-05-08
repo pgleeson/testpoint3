@@ -19,16 +19,23 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Setup docker (missing on MacOS)
+      if: runner.os == 'macos'
+      run: |
+        brew install docker
+        colima start
+
     - name: Build the Docker image
+      if: ${{ matrix.runs-on != 'windows-latest' }}
       run: |
         ls -alt
         docker build -t test_docker -f DockerfileU24 .
 
-    - name: Info on Docker images
-      run: |
         docker -v
         docker images
-
-    - name: Info on generated files
-      run: |
         ls -alth
+
+    - name: Build the Docker image
+      if: ${{ matrix.runs-on == 'windows-latest' }}
+      run: |
+        # See https://github.com/actions/runner/issues/904...
