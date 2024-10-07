@@ -55,7 +55,6 @@ Parameters and setting used to generate this network:
         BioParameter: unphysiological_offset_current_dur = 900 ms (SRC: Testing Full net, certainty 0)
 
 </notes>
-    <include href="cell_C.xml"/>
     <fixedFactorConcentrationModel id="CaPool" ion="ca" restingConc="0 mM" decayConstant="11.5943 ms" rho="0.000238919 mol_per_m_per_A_per_s"/>
     <gapJunction id="neuron_to_neuron_elec_syn" conductance="0.00052 nS"/>
     <silentSynapse id="silent"/>
